@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/recordName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/android_blue_dark"
+        android:fontFamily="@string/font_normal"
+        android:padding="@dimen/default_16dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#fff"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/default_8dp"
+                android:paddingLeft="@dimen/default_16dp"
+                android:paddingRight="@dimen/default_16dp"
+                android:paddingTop="@dimen/default_8dp">
+
+                <odoo.controls.BezelImageView
+                    android:id="@+id/author_image"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:maskDrawable="@drawable/circle_mask" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/default_8dp">
+
+                    <TextView
+                        android:id="@+id/authorName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@string/font_condensed"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/body_text_2" />
+
+                    <TextView
+                        android:id="@+id/messageDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@string/font_condensed"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@color/body_text_3" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/messageSubject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:fontFamily="@string/font_normal"
+                android:padding="@dimen/default_16dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/body_text_1"
+                android:textStyle="bold" />
+
+            <View style="@style/ViewSeparator" />
+
+            <WebView
+                android:id="@+id/messageBody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="@android:color/transparent">
+
+            </WebView>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/default_8dp">
+
+        <LinearLayout
+            android:id="@+id/attachmentsList"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <View style="@style/ViewSeparator" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="?android:attr/dividerVertical"
+        android:orientation="horizontal"
+        android:showDividers="middle">
+
+
+        <Button
+            android:id="@+id/btnReply"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:selectableItemBackground"
+            android:fontFamily="@string/font_normal"
+            android:gravity="center"
+            android:padding="@dimen/default_16dp"
+            android:text="@string/label_reply"
+            android:textAllCaps="true"
+            android:textColor="@color/body_text_1"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnClose"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:selectableItemBackground"
+            android:fontFamily="@string/font_normal"
+            android:gravity="center"
+            android:padding="@dimen/default_16dp"
+            android:text="@string/label_close"
+            android:textAllCaps="true"
+            android:textColor="@color/body_text_1"
+            android:textSize="@dimen/text_size_medium" />
+
+    </LinearLayout>
+</LinearLayout>
